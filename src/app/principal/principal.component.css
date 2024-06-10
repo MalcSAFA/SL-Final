@@ -1,0 +1,47 @@
+main {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../../assets/svg/fondoprincipal.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 3vh;
+}
+
+.logo>img {
+    width: 20vw;
+    height: auto;
+}
+
+.forms {
+    padding-top: 35vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.boton>a>img {
+    height: 12vh;
+    width: auto;
+}
+
+.info {
+    display: flex;
+    padding-top: 37.5vh;
+    width: 33vw;
+    justify-content: space-around;
+}
+
+.text>a {
+    text-decoration: none;
+}
+
+.text>a>p {
+    font-size: 1.5vw;
+    color: #0C3AC3;
+}

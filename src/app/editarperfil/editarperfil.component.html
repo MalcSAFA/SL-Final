@@ -1,0 +1,33 @@
+<div class="cuadroeditar" *ngIf="usuario">
+  <p class="titulo">Editar perfil</p>
+  <div class="campos" *ngIf="perfil">
+    <div class="campo">
+      <p class="nombrecampo">Nombre:</p>
+      <input type="text" [(ngModel)]="usuario.nombre" placeholder="Introduce tu nombre" required>
+    </div>
+
+    <div class="campo">
+      <p class="nombrecampo">Apellido:</p>
+      <input type="text" [(ngModel)]="usuario.apellido" placeholder="Introduce tu apellido" required>
+    </div>
+
+    <div class="campo">
+      <p class="nombrecampo">Foto:</p>
+      <input type="text" [(ngModel)]="usuario.foto" placeholder="Introduce tu foto" required>
+    </div>
+    <div class="campo">
+      <p class="nombrecampo">Estado:</p>
+      <input type="text" [(ngModel)]="perfil.estado" placeholder="Introduce tu estado" required>
+    </div>
+    <div class="campo">
+      <p class="nombrecampo">Privacidad:</p>
+      <select name="privacidad" id="privacidad" [(ngModel)]="perfil.subidas">
+        <option value="0">Público</option>
+        <option value="1">Privado</option>
+      </select>
+    </div>
+  </div>
+  <button class="editar" (click)="actualizarUsuario()" (click)="actualizarPerfil()">
+    <p>Editar</p>
+  </button>
+</div>

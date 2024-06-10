@@ -1,0 +1,49 @@
+<main>
+    <div *ngFor="let notificacion of notificacionesLista" class="noti">
+        <div class="notificacion">
+            <div class="izq">
+                <div class="tipo" *ngIf="notificacion.tipoNotificacion === 'seguir'">
+                    <img src="../../assets/svg/iconos/perfil.png" alt="tesigue">
+                </div>
+                <div class="tipo" *ngIf="notificacion.tipoNotificacion === 'like'">
+                    <img src="../../assets/svg/iconos/like.png" alt="megusta">
+                </div>
+                <div class="tipo" *ngIf="notificacion.tipoNotificacion === 'respuesta'">
+                    <img src="../../assets/svg/iconos/comentar.png" alt="comentar">
+                </div>
+                <div class="tipo" *ngIf="notificacion.tipoNotificacion === 'retweet'">
+                    <img src="../../assets/svg/iconos/repost.png" alt="rt">
+                </div>
+                <div class="tipo" *ngIf="notificacion.tipoNotificacion === 'mencion'">
+                    <img src="../../assets/svg/iconos/arroba.png" alt="mencion">
+                </div>
+                <div class="foto">
+                    <img src="../../assets/svg/minifotoperfil.svg" alt=""
+                        [style.backgroundImage]="'url(' + notificacion.usuarioEmisor.foto + ')'">
+                </div>
+            </div>
+            <div class="texto">
+                <p *ngIf="notificacion.tipoNotificacion === 'seguir'">
+                    <span>{{ notificacion.usuarioEmisor.nombre }} {{ notificacion.usuarioEmisor.apellido }}</span> ahora
+                    te sigue.
+                </p>
+                <p *ngIf="notificacion.tipoNotificacion === 'like'">
+                    <span>{{ notificacion.usuarioEmisor.nombre }} {{ notificacion.usuarioEmisor.apellido }}</span>
+                    indicó que le gusta tu publicación.
+                </p>
+                <p *ngIf="notificacion.tipoNotificacion === 'respuesta'">
+                    <span>{{ notificacion.usuarioEmisor.nombre }} {{ notificacion.usuarioEmisor.apellido }}</span> te
+                    respondió a la publicación.
+                </p>
+                <p *ngIf="notificacion.tipoNotificacion === 'retweet'">
+                    <span>{{ notificacion.usuarioEmisor.nombre }} {{ notificacion.usuarioEmisor.apellido }}</span> te
+                    hizo una republicación.
+                </p>
+                <p *ngIf="notificacion.tipoNotificacion === 'mencion'">
+                    <span>{{ notificacion.usuarioEmisor.nombre }} {{ notificacion.usuarioEmisor.apellido }}</span> te
+                    mencionó en una publicación.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>

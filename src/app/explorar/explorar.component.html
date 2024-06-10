@@ -1,0 +1,22 @@
+<main>
+    <div class="buscador">
+        <input type="text" placeholder="Buscar usuarios..." [(ngModel)]="query" (input)="buscarUsuarios()" />
+    </div>
+
+    <div class="resultados">
+        <ul>
+            <li *ngFor="let usuario of usuariosFiltrados" class="resul">
+                <div class="foto">
+                    <img src="../../assets/svg/minifotoperfil.svg" alt=""
+                        [style.backgroundImage]="'url(' + usuario.foto + ')'">
+                </div>
+                <div class="nombre">
+                    <a href="/perfil/{{usuario.id}}">{{ usuario.nombre }} {{ usuario.apellido }}</a>
+                </div>
+                <div class="usuario">
+                    <p>&#64;{{ usuario.nick }}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</main>

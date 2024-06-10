@@ -1,0 +1,59 @@
+<main>
+  <div class="banner">
+    <img src="../../assets/svg/banner.svg" alt="" [style.backgroundImage]="'url(' + usuario?.foto + ')'">
+  </div>
+  <div class="partemedia">
+    <div class="estadisticas">
+      <div class="seguidores">
+        <p>Seguidores: {{ seguidoresCount }}</p>
+      </div>
+      <div class="siguiendo">
+        <p>Siguiendo: {{ siguiendoCount }}</p>
+      </div>
+
+    </div>
+    <div class="miniperfil">
+      <div class="foto">
+        <img src="../../assets/svg/perfilfoto.svg" alt="" [style.backgroundImage]="'url(' + usuario?.foto + ')'">
+      </div>
+      <p class="nombre">{{ usuario?.nombre }} {{ usuario?.apellido }}</p>
+      <p class="usuario">&#64;{{ usuario?.nick }}</p>
+      <div class="estbox" *ngIf="mostrarContenido">
+        <p class="estado">{{ perfil?.estado }}</p>
+      </div>
+      <div *ngIf="!mostrarContenido">
+        <p>Este perfil es privado. Debes seguirlo para ver su contenido.</p>
+      </div>
+    </div>
+    <div class="acciones">
+      <button class="editar" *ngIf="esMiPerfil" (click)="mostrarEditar()">
+        <img src="../../assets/svg/iconos/editar.png" alt="">
+        <p>Editar</p>
+      </button>
+      <button class="seguir" *ngIf="mostrarSeguir" (click)="seguirPerfil()">
+        <img src="../../assets/svg/iconos/agregar.png" alt="">
+        <p>Seguir</p>
+      </button>
+      <button class="seguir" *ngIf="mostrarDejarDeSeguir" (click)="dejarDeSeguirPerfil()">
+        <img src="../../assets/svg/borrar.svg" alt="">
+        <p>Dejar de seguir</p>
+      </button>
+
+
+    </div>
+  </div>
+  <div class="parteinferior" *ngIf="mostrarContenido">
+    <div class="decoracion" *ngIf="!mostrarEditarPerfil">
+      <p class="subs">Publicaciones</p>
+      <p>Me Gusta</p>
+    </div>
+    <app-feedperfil *ngIf="!mostrarEditarPerfil"></app-feedperfil>
+    <app-editarperfil *ngIf="mostrarEditarPerfil"></app-editarperfil>
+  </div>
+  <div class="cerrarsesion">
+    <a href="/inicio" class="boton">
+      <img src="../../assets/svg/iconos/inicio.png" alt="">
+      <p>Inicio</p>
+    </a>
+  </div>
+</main>

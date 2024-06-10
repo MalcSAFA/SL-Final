@@ -1,0 +1,84 @@
+main  {
+    height: 95vh;
+    width: 40vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buscador input {
+    background-color: transparent;
+    width: 12vw;
+    font-size: 1vw;
+    color: #0C3AC3;
+    margin-left: 0.25vw;
+    margin-top: 0.5vh;
+    outline: none;
+    border: none;
+}
+
+
+.buscador {
+    background-image: url(../../assets/svg/campo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((200vw / 9.59));
+    height: calc((200vw / 9.59)/9.59);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1vh;
+}
+
+.buscador input::placeholder {
+    color: #0EB2F4;
+    font-size: 1vw;
+}
+
+.resultados {
+    height: 70vh;
+    overflow-y: auto;
+    scrollbar-color: #0C3AC3 transparent;
+    /* Color de la barra de desplazamiento y de la pista */
+    scrollbar-width: none;
+    /* Ancho del scrollbar */
+    margin-top: 5vh;
+}
+
+.resultados li {
+    background-image: url(../../assets/svg/cuadradograndepubli.svg);
+    width: calc((120vw / 4.598));
+    height: calc((120vw / 4.598)/4.598);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.resul:not(:first-child) {
+    margin-top: 2vh;
+}
+
+.nombre>a {
+    color: #0C3AC3;
+    font-size: 1vw;
+    margin-left: 1vw;
+    text-decoration: none;
+}
+
+.usuario>p {
+    color: #0EB2F4;
+    font-size: 0.8vw;
+    margin-left: 0.5vw;
+}
+
+.foto>img {
+    background-color: #0EB2F4;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 3vw;
+}

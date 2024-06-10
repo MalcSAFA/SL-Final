@@ -1,0 +1,42 @@
+main {
+    height: 100vh;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    padding-top: 5vh;
+    padding-left: 5vw;
+}
+
+.logo>a>img {
+    width: 17.5vw;
+    height: auto;
+}
+
+.texto {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3vw;
+}
+
+h1 {
+    font-size: 2.5vw;
+    color: #0C3AC3;
+}
+
+p {
+    padding-top: 2.5vh;
+    color: #0EB2F4;
+    text-align: center;
+    width: 50vw;
+    height: 60vh;
+    font-size: 1.55vw;
+}
+
+span {
+    color: #0C3AC3;
+}

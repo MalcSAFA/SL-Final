@@ -1,0 +1,30 @@
+<main>
+    <div class="logo">
+        <a href="/">
+            <img src="../../assets/svg/logo-blanco.svg" alt="">
+        </a>
+    </div>
+    <div class="cuadroiniciosesion">
+        <p class="titulo">Iniciar sesión</p>
+        <div class="campos">
+            <div class="campo">
+                <p class="nombrecampo">Correo:</p>
+                <input type="text" placeholder="Introduce tu correo" [(ngModel)]="correo" required>
+            </div>
+
+            <div class="campo">
+                <p class="nombrecampo">Contraseña:</p>
+                <input type="password" placeholder="Introduce tu contraseña" [(ngModel)]="contrasenya" required>
+            </div>
+        </div>
+        <div *ngIf="mensajeError" class="error-message">
+            {{ mensajeError }}
+        </div>
+        <div *ngIf="usuarioClicked && (!contrasenya || !correo)" class="error-message">
+            Por favor, completa todos los campos requeridos.
+        </div>
+        <button class="iniciarsesion" (click)="iniciarSesion()">
+            <p>Iniciar sesión</p>
+        </button>
+    </div>
+</main>

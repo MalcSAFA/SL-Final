@@ -1,0 +1,76 @@
+<main>
+    <div class="izquierda">
+        <div class="miniperfil">
+            <div class="foto">
+                <img src="../../assets/svg/fotoperfil.svg" alt=""
+                    [style.backgroundImage]="'url(' + usuarioSeleccionado?.foto + ')'">
+            </div>
+            <p class="nombre">{{ usuarioSeleccionado?.nombre }} {{ usuarioSeleccionado?.apellido }}</p>
+            <p class="usuario">&#64;{{ usuarioSeleccionado?.nick }}</p>
+        </div>
+        <div class="botones">
+            <a class="boton" (click)="mostrarSeccion('publicarYFeed')">
+                <img src="../../assets/svg/iconos/inicio.png" alt="">
+                <p>Inicio</p>
+            </a>
+            <a [routerLink]="['/perfil', idPerfil]" class="boton">
+                <img src="../../assets/svg/iconos/perfil.png" alt="">
+                <p>Perfil</p>
+            </a>
+            <a class="boton" (click)="mostrarSeccion('notificaciones')">
+                <img src="../../assets/svg/iconos/notificaciones.png" alt="">
+                <p>Notificaciones</p>
+            </a>
+            <a class="boton" (click)="mostrarSeccion('explorar')">
+                <img src="../../assets/svg/iconos/explorar.png" alt="">
+                <p>Explorar</p>
+            </a>
+            <a class="boton" (click)="mostrarSeccion('listas')">
+                <img src="../../assets/svg/iconos/listas.png" alt="">
+                <p>Listas</p>
+            </a>
+        </div>
+        <div class="cerrarsesion">
+            <a href="/" class="boton" (click)="cerrarSesion()">
+                <img src="../../assets/svg/iconos/logout.png" alt="">
+                <p>Cerrar sesión</p>
+            </a>
+        </div>
+    </div>
+    <div class="centro">
+        <app-publicar *ngIf="mostrarPublicarYFeed"></app-publicar>
+        <app-feed *ngIf="mostrarPublicarYFeed"></app-feed>
+        <app-notificaciones *ngIf="mostrarNotificaciones"></app-notificaciones>
+        <app-explorar *ngIf="mostrarExplorar"></app-explorar>
+        <app-listas *ngIf="mostrarListas"></app-listas>
+    </div>
+    <div class="derecha">
+        <div class="tendencias">
+            <p>Tendencias</p>
+            <div class="tendencia">
+                <p>#Liga</p>
+            </div>
+            <div class="tendencia">
+                <p>#Xavi</p>
+            </div>
+            <div class="tendencia">
+                <p>#TaylorSwift</p>
+            </div>
+            <div class="tendencia">
+                <p>#PaísVasco</p>
+            </div>
+        </div>
+        <div class="recomendados">
+            <p>Para ti</p>
+            <div class="perfil">
+                <img src="../../assets/svg/iconos/Group 10.png" alt="">
+            </div>
+            <div class="perfil">
+                <img src="../../assets/svg/iconos/Group 11.png" alt="">
+            </div>
+            <div class="perfil">
+                <img src="../../assets/svg/iconos/Group 12.png" alt="">
+            </div>
+        </div>
+    </div>
+</main>

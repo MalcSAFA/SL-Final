@@ -1,0 +1,57 @@
+<main>
+    <div *ngIf="!listaSeleccionadaId" class="crear">
+        <div class="izq">
+            <p>Lista nueva:</p>
+            <input type="text" class="nombre_listas" [(ngModel)]="nombreLista">
+            <button class="crear_lista" (click)="crearLista()">
+                <p>Crear lista</p>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="!listaSeleccionadaId">
+        <div *ngFor="let lista of listas" class="lista">
+            <div class="izq">
+                <div class="tipo">
+                    <img src="../../assets/svg/iconos/listas.png" alt="lista">
+                </div>
+            </div>
+            <div class="texto">
+                <p>
+                    <span>{{ lista.nombreLista }}</span>
+                    <button class="botonlista" (click)="seleccionarLista(lista.id!)">
+                        <p>Acceder</p>
+                    </button>
+                    <button class="botonlista" (click)="eliminarLista(lista.id!)">
+                        <p>Eliminar</p>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="listaSeleccionadaId" class="listaacc">
+        <h2>Usuarios en la lista:</h2>
+        <div class="listas">
+            <div class="listausuariolista">
+                <div *ngFor="let usuario of usuariosLista" class="usuariolista">
+                    <!-- Aquí puedes mostrar los detalles de cada usuario -->
+                    <p>{{ usuario.usuario.nombre }} {{ usuario.usuario.apellido }}</p>
+                    <button (click)="eliminarDeLista(usuario.id)">
+                        <img src="../../assets/svg/borrar.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="listausuario">
+                <div *ngFor="let usuario of usuarios" class="usuario">
+                    <p>{{ usuario.nombre }} {{ usuario.apellido }}</p>
+                    <button (click)="agregarALista(usuario.id)">
+                        <img src="../../assets/svg/iconos/agregar.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <app-feedlista></app-feedlista>
+        <button class="volver" (click)="limpiarIdLista()">
+            <p>Volver atrás</p>
+        </button>
+    </div>
+</main>

@@ -1,0 +1,189 @@
+main {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #0EB2F4;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner>img {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    width: 100vw;
+    height: auto;
+}
+
+
+.partemedia {
+    display: flex;
+    width: 100vw;
+    height: 15vh;
+    justify-content: center;
+}
+
+.estadisticas {
+    display: flex;
+    width: 33.33vw;
+    justify-content: center;
+}
+
+.seguidores>p,
+.siguiendo>p {
+    font-size: 1.5vw;
+    color: #0C3AC3;
+    margin: 2vw;
+}
+
+.miniperfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33vw;
+    justify-content: center;
+    transform: translate(0%, -35%);
+}
+
+.foto>img {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 10vw;
+    height: auto;
+}
+
+.nombre {
+    color: white;
+    font-size: 2vw;
+    margin-top: 1vh;
+}
+
+.usuario {
+    color: #0C3AC3;
+    font-size: 1.25vw;
+    margin-top: 0.75vh;
+}
+
+.estbox {
+    width: 40vw;
+    height: 10vh;
+}
+
+.estado {
+    color: #0C3AC3;
+    font-size: 1.25vw;
+    margin-top: 1.25vh;
+    text-align: center;
+
+}
+
+.acciones {
+    width: 33.33vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.acciones>button {
+    display: flex;
+    width: auto;
+    height: 4vh;
+    align-items: center;
+    background-color: transparent;
+    border: 0.5vw solid transparent;
+    border-radius: 0.75vw;
+    margin-top: 2vw;
+}
+
+.seguir {
+    margin-right: 5vw;
+}
+
+.acciones>button:hover {
+    background-color: white;
+}
+
+button>img {
+    height: auto;
+    width: 1vw;
+}
+
+button>p {
+    margin-left: 0.5vw;
+    font-size: 1.5vw;
+    color: #0C3AC3;
+}
+
+.parteinferior {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.boton {
+    width: calc((65vw / 4.218));
+    height: calc((65vw / 4.218)/4.218);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0C3AC3;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-image: url(../../assets/svg/bordeazul.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.boton>img {
+    width: 1.25vw;
+    height: auto;
+}
+
+.boton>p {
+    font-size: 1.75vw;
+    margin-right: 1.25vw;
+    margin-left: 0.25vw;
+}
+
+.cerrarsesion {
+    margin-right: 90vw;
+    margin-top: auto;
+    /* Mueve el botón al final del contenedor */
+}
+
+.cerrarsesion>a {
+    width: calc((40vw / 4.218));
+    height: calc((40vw / 4.218)/4.218);
+}
+
+.cerrarsesion>a>p {
+    font-size: 1.5vw;
+}
+
+.decoracion {
+    border-top: 0.25vw solid #0C3AC3;
+    width: 50vw;
+    height: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+.decoracion>p {
+    color: #0C3AC3;
+    font-size: 1.25vw;
+}
+
+
+.subs {
+    border-bottom: 0.15vw solid #0C3AC3;
+}

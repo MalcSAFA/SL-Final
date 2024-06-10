@@ -1,0 +1,18 @@
+<main>
+    <div class="publicar">
+        <textarea required placeholder="Escribe algo..." maxlength="220" [(ngModel)]="nuevoTweet.texto"></textarea>
+        <div *ngIf="!nuevoTweet.texto && tweetClicked" class="error-message">
+            Por favor, ingresa un texto para tu tweet.
+        </div>
+        <div class="parteinf">
+            <textarea *ngIf="addIMGClicked" class="add" placeholder="Inserta link de tu imagen o GIF"
+                [(ngModel)]="nuevoTweet.link"></textarea>
+            <div class="insertar" (click)="addIMG()">
+                <img src="../../assets/svg/iconos/addimg.png" alt="">
+            </div>
+            <button class="publicarbot" (click)="crearTweets()">
+                <p>Publicar</p>
+            </button>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,89 @@
+.cuadroeditar {
+    background-image: url(../../assets/svg/cuadroiniciosesion.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((40vw / 1.127));
+    height: calc((40vw / 1.127)/1.127);
+    margin-top: 7.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo {
+    color: #0C3AC3;
+    font-size: 2.1vw;
+    margin-top: 4vh;
+}
+
+.campo {
+    margin-top: 3.5vh;
+    margin-right: 1vw;
+    background-image: url(../../assets/svg/campo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((200vw / 9.59));
+    height: calc((200vw / 9.59)/9.59);
+    display: flex;
+    justify-content: center;
+}
+
+.nombrecampo {
+    color: #0C3AC3;
+    font-size: 0.75vw;
+}
+
+input {
+    background-color: transparent;
+    width: 14vw;
+    font-size: 1vw;
+    color: #0C3AC3;
+    margin-left: 0.25vw;
+    margin-top: 1vh;
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    color: #0EB2F4;
+    font-size: 0.75vw;
+}
+
+.editar {
+    margin-top: 4vh;
+    background-image: url(../../assets/svg/botonazul.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((32vw / 3.246));
+    height: calc((32vw / 3.246)/3.246);
+    display: flex;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+}
+
+.editar>p {
+    margin-bottom: 0.75vh;
+    color: #0C3AC3;
+    font-size: 1.2vw;
+}
+
+
+select {
+    background-color: transparent;
+    width: 14vw;
+    font-size: 1vw;
+    color: #0C3AC3;
+    margin-left: 0.25vw;
+    margin-top: 1vh;
+    outline: none;
+    border: none;
+}
+
+select::placeholder {
+    color: #0EB2F4;
+    font-size: 0.75vw;
+}

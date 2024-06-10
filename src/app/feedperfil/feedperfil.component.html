@@ -1,0 +1,100 @@
+<main>
+    <div *ngFor="let tweet of tweets" class="tweet">
+        <div class="publicacion">
+            <div class="partearriba">
+                <div class="foto">
+                    <img src="../../assets/svg/minifotoperfil.svg" alt=""
+                        [style.backgroundImage]="'url(' + tweet.usuario.foto + ')'">
+                </div>
+                <div class="nombre">
+                    <a href="/perfil/{{tweet.usuario.id}}">{{ tweet.usuario.nombre }} {{ tweet.usuario.apellido }}</a>
+                </div>
+                <div class="usuario">
+                    <p>&#64;{{ tweet.usuario.nick }}</p>
+                </div>
+                <div class="fecha">
+                    <p>{{ tweet.fechaPublicacion }}</p>
+                </div>
+            </div>
+            <div class="texto">
+                <p [innerHTML]="formatTweetText(tweet.texto)"></p>
+                <div class="fotopub">
+                    <img [src]="tweet.link" alt="">
+                </div>
+            </div>
+            <div class="parteinf">
+                <div class="interaccion" (click)="likeTweet(tweet.id)" [ngClass]="{'liked': checkIfLiked(tweet.id)}">
+                    <img src="../../assets/svg/iconos/like.png" alt="">
+                    <p>{{ contarLikes(tweet.id) }}</p>
+                </div>
+                <div class="interaccion" (click)="rtTweet(tweet.id)" [ngClass]="{'liked': checkIfRTd(tweet.id)}">
+                    <img src="../../assets/svg/iconos/repost.png" alt="">
+                    <p>{{ contarRTs(tweet.id) }}</p>
+                </div>
+                <div class="interaccion" (click)="toggleRespuestas(tweet.id)">
+                    <img src="../../assets/svg/iconos/comentar.png" alt="">
+                    <p>{{ contarRespuestas(tweet.id) }}</p>
+                </div>
+                <div class="interaccion" *ngIf="esPropietario(tweet)">
+                    <img src="../../assets/svg/basura.svg" alt="" (click)="eliminarTweet(tweet.id)">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="mostrarRespuestas[tweet.id]">
+
+
+            <div class="publicarres">
+                <textarea required placeholder="Escribe algo..." maxlength="220"
+                    [(ngModel)]="nuevoRespuesta.texto"></textarea>
+                    <div *ngIf="!nuevoRespuesta.texto && respuestaClicked" class="error-message">
+                        Por favor, ingresa un texto para tu respuesta.
+                    </div>
+                <div class="parteinfres1">
+                    <button class="publicarresbot" (click)="crearRespuesta(tweet.id)">
+                        <p>Publicar</p>
+                    </button>
+                </div>
+            </div>
+
+
+            <div *ngFor="let respuesta of respuestas" class="respuestas">
+                <div *ngIf="respuesta.tweet.id === tweet.id" class="respuesta">
+                    <div class="partearribares">
+                        <div class="fotores">
+                            <img src="../../assets/svg/minifotoperfil.svg" alt=""
+                                [style.backgroundImage]="'url(' + respuesta.usuario.foto + ')'">
+                        </div>
+                        <div class="nombreres">
+                            <a href="/perfil/{{respuesta.usuario.id}}">{{ respuesta.usuario.nombre }} {{
+                                respuesta.usuario.apellido }}</a>
+                        </div>
+                        <div class="usuariores">
+                            <p>&#64;{{ respuesta.usuario.nick }}</p>
+                        </div>
+                    </div>
+                    <div class="textores">
+                        <p [innerHTML]="formatRespuestaText(respuesta.texto)"></p>
+                    </div>
+                    <div class="parteinfres">
+                        <!-- <div class="interaccionres">
+                            <img src="../../assets/svg/iconos/like.png" alt="">
+                            <p>15</p>
+                        </div>
+                        <div class="interaccionres">
+                            <img src="../../assets/svg/iconos/repost.png" alt="">
+                            <p>15</p>
+                        </div>
+                        <div class="interaccionres">
+                            <img src="../../assets/svg/iconos/comentar.png" alt="">
+                            <p>15</p>
+                        </div> -->
+                        <div class="interaccionres" *ngIf="esPropietarioRespuesta(respuesta)">
+                            <img src="../../assets/svg/basura.svg" alt="" (click)="eliminarRespuesta(respuesta.id)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

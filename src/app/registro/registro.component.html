@@ -1,0 +1,63 @@
+<main>
+    <div class="logo">
+        <a href="/">
+            <img src="../../assets/svg/logo.svg" alt="">
+        </a>
+    </div>
+    <div class="cuadroregistro">
+        <p class="titulo">Registro</p>
+        <div class="campos">
+            <div class="campo">
+                <p class="nombrecampo">Nombre:</p>
+                <input type="text" placeholder="Introduce tu nombre" [(ngModel)]="nuevoUsuario.nombre" required>
+            </div>
+
+            <div class="campo">
+                <p class="nombrecampo">Apellido:</p>
+                <input type="text" placeholder="Introduce tu apellido" [(ngModel)]="nuevoUsuario.apellido" required>
+            </div>
+
+            <div class="campo">
+                <p class="nombrecampo">Nick:</p>
+                <input type="text" placeholder="Introduce tu nick" [(ngModel)]="nuevoUsuario.nick" required>
+            </div>
+
+            <div class="campo">
+                <p class="nombrecampo">Correo:</p>
+                <input type="text" placeholder="Introduce tu correo" [(ngModel)]="nuevoUsuario.correo" required>
+            </div>
+
+            <div class="campo">
+                <p class="nombrecampo">Contraseña:</p>
+                <input type="password" placeholder="Introduce tu contraseña" [(ngModel)]="nuevoUsuario.contrasenya"
+                    required>
+            </div>
+
+
+            <div class="campo">
+                <p class="nombrecampo">Foto:</p>
+                <input type="text" placeholder="Introduce tu foto" [(ngModel)]="nuevoUsuario.foto" required>
+            </div>
+
+            <div class="campo">
+                <p class="nombrecampo">Fecha de nacimiento:</p>
+                <input type="text" placeholder="Introduce tu fecha de nacimiento"
+                    [(ngModel)]="nuevoUsuario.fecha_nacimiento" type="date" required>
+            </div>
+
+        </div>
+
+        <div *ngIf="correoEnUso" class="error-message">
+            El correo ya está en uso.
+        </div>
+
+        <div *ngIf="usuarioClicked && (!nuevoUsuario.nombre || !nuevoUsuario.apellido || !nuevoUsuario.nick || !nuevoUsuario.contrasenya || !nuevoUsuario.correo || !nuevoUsuario.foto || !nuevoUsuario.fecha_nacimiento)"
+            class="error-message">
+            Por favor, completa todos los campos requeridos.
+        </div>
+
+        <button class="registrarse" (click)="crearUsuario()">
+            <p>Registrarse</p>
+        </button>
+    </div>
+</main>

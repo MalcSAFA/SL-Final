@@ -1,0 +1,62 @@
+main {
+    height: 90vh;
+    overflow-y: auto;
+    /* Agrega un desplazador vertical cuando el contenido supera la altura */
+}
+
+/* Estilo para navegadores que soportan scrollbar-color y scrollbar-width (Firefox) */
+main {
+    scrollbar-color: #0C3AC3 transparent;
+    /* Color de la barra de desplazamiento y de la pista */
+    scrollbar-width: none;
+    /* Ancho del scrollbar */
+}
+
+
+.notificacion {
+    background-image: url(../../assets/svg/cuadradograndepubli.svg);
+    width: calc((192vw / 4.598));
+    height: calc((192vw / 4.598)/4.598);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.noti:not(:first-child) {
+    margin-top: 4vh;
+}
+
+.izq {
+    display: flex;
+    margin-left: 3.5vw;
+}
+
+.tipo>img {
+    width: 2.25vw;
+    height: auto;
+}
+
+.foto {
+    margin-left: 1vw;
+}
+
+.foto>img {
+    background-color: #0EB2F4;
+    width: 4.5vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+
+.texto>p {
+    color: #0EB2F4;
+    font-size: 1.1vw;
+    margin-left: 0.75vw;
+}
+
+span {
+    color: #0C3AC3;
+}

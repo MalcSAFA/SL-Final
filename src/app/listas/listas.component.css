@@ -1,0 +1,272 @@
+main {
+    height: 95vh;
+    overflow-y: auto;
+
+    /* Agrega un desplazador vertical cuando el contenido supera la altura */
+}
+
+/* Estilo para navegadores que soportan scrollbar-color y scrollbar-width (Firefox) */
+main {
+    scrollbar-color: #0C3AC3 transparent;
+    /* Color de la barra de desplazamiento y de la pista */
+    scrollbar-width: none;
+    /* Ancho del scrollbar */
+}
+
+
+.lista {
+    background-image: url(../../assets/svg/cuadradograndepubli.svg);
+    width: calc((192vw / 4.598));
+    height: calc((192vw / 4.598)/4.598);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 4vh;
+}
+
+
+.crear {
+    background-image: url(../../assets/svg/cuadradograndepubli.svg);
+    width: calc((192vw / 4.598));
+    height: calc((192vw / 4.598)/4.598);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nombre_listas {
+    background-image: url(../../assets/svg/campo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((130vw / 9.59));
+    height: calc((130vw / 9.59)/9.59);
+    margin-right: 3vw;
+}
+
+.izq {
+    display: flex;
+    margin-left: 3.5vw;
+}
+
+.crear>.izq {
+    margin-right: 3.5vw;
+    height: 10vh;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.crear>.izq>p {
+    font-size: 1vw;
+    color: #0EB2F4;
+}
+
+.crear>.izq>input {
+    background-color: transparent;
+    font-size: 0.8vw;
+    color: #0C3AC3;
+    outline: none;
+    border: none;
+}
+
+.tipo>img {
+    width: 2.25vw;
+    height: auto;
+}
+
+.foto {
+    margin-left: 1vw;
+}
+
+.foto>img {
+    background-color: #0EB2F4;
+    width: 4.5vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+
+.texto>p {
+    color: #0EB2F4;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+span {
+    color: #0C3AC3;
+    font-size: 1.5vw;
+}
+
+
+.crear_lista {
+    background-image: url(../../assets/svg/botonazul.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((20vw / 3.246));
+    height: calc((20vw / 3.246)/3.246);
+    display: flex;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+}
+
+.crear_lista>p {
+    margin-bottom: 0.75vh;
+    color: #0C3AC3;
+    font-size: 0.75vw;
+}
+
+.texto {
+    width: 30vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.botonlista {
+    background-image: url(../../assets/svg/botonazul.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((17vw / 3.246));
+    height: calc((17vw / 3.246)/3.246);
+    display: flex;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 2vw;
+}
+
+.botonlista>p {
+    margin-bottom: 0.75vh;
+    color: #0C3AC3;
+    font-size: 0.65vw;
+}
+
+
+.listaacc {
+    min-height: 95vh;
+    min-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.listaacc>h2 {
+    font-size: 2vw;
+    color: #0C3AC3;
+    margin-bottom: 5vh;
+}
+
+.listas {
+    display: flex;
+    justify-content: space-evenly;
+    width: 40vw;
+}
+
+.listausuariolista {
+    width: 20vw;
+    height: 20vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.listausuario {
+    width: 20vw;
+    height: 20vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.usuariolista {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 15vw;
+    height: 3vh;
+    margin-top: 1vh;
+}
+
+.usuario {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 15vw;
+    height: 3vh;
+    margin-top: 1vh;
+}
+
+app-feedlista {
+    margin-top: 5vh;
+}
+
+
+.usuariolista>button,
+.usuario>button {
+    display: flex;
+    width: auto;
+    height: 4vh;
+    align-items: center;
+    background-color: transparent;
+    border: 0.5vw solid transparent;
+    border-radius: 0.75vw;
+}
+
+
+button>img {
+    height: auto;
+    width: 2vw;
+    cursor: pointer;
+}
+
+.usuariolista>p,
+.usuario>p {
+    color: #0C3AC3;
+    font-size: 1vw;
+}
+
+
+
+.volver {
+    background-image: url(../../assets/svg/bordeazul.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: calc((20vw / 3.246));
+    height: calc((20vw / 3.246)/3.246);
+    display: flex;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 5vh;
+}
+
+.volver>p {
+    margin-bottom: 0.75vh;
+    color: #0C3AC3;
+    font-size: 0.75vw;
+}
