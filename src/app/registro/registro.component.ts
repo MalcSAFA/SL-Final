@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registro',
@@ -12,7 +14,7 @@ export class RegistroComponent implements OnInit {
   usuarioClicked: boolean = false;
   correoEnUso: boolean = false;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerUsuario();
@@ -48,6 +50,7 @@ export class RegistroComponent implements OnInit {
         console.log(data);
         // Actualiza la lista de usuarios después de crear el nuevo usuario
         this.obtenerUsuario();
+        this.router.navigate(['/iniciosesion']); // Cambia '/ruta-destino' a la ruta a la que deseas redirigir
       },
       error => {
         console.error('Error al crear el usuario', error);
